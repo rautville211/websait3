@@ -1,0 +1,135 @@
+body {
+    display: flex;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+.profile-container {
+    width: 250px;
+    padding: 20px;
+    background-color: #fff;
+    border-right: 1px solid #ddd;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.game-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 1.5em;
+    color: #333;
+}
+
+form, select, #avatarForm {
+    margin-bottom: 10px;
+}
+
+input, button, select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    margin: 5px 0;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#avatar, #currentProfileAvatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-top: 10px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(10, 30px);
+    grid-template-rows: repeat(10, 30px);
+    gap: 2px;
+    margin-bottom: 20px;
+    visibility: hidden; /* Скрываем сетку до начала игры */
+}
+
+.grid div {
+    width: 30px;
+    height: 30px;
+    background-color: #ddd;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.blocks-container {
+    display: flex;
+    gap: 10px;
+    visibility: hidden; /* Скрываем блоки до начала игры */
+}
+
+.block {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90px;  /* Assuming 3x3 blocks */
+    height: 90px;
+    background-color: #f9f9f9;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.block:active {
+    transform: scale(0.95);
+}
+
+.block div {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #444;
+    border-radius: 4px;
+    margin: 1px;
+}
+
+/* Добавление разных цветов для блоков */
+.block div.filled:nth-child(1) {
+    background-color: #ff6f61;
+}
+
+.block div.filled:nth-child(2) {
+    background-color: #6b5b95;
+}
+
+.block div.filled:nth-child(3) {
+    background-color: #88b04b;
+}
+
+.block div.filled:nth-child(4) {
+    background-color: #f7cac9;
+}
+
+.block div.filled:nth-child(5) {
+    background-color: #92a8d1;
+}
+
+/* Перетаскивание */
+.block.dragging {
+    opacity: 0.5;
+}
